@@ -59,3 +59,13 @@ if (( $+commands[bundle] )); then
     && print vendor/cache  >>! .gitignore'
 fi
 
+LINKS=(aprc gemrc irbrc pryrc)
+
+for file in $LINKS
+do
+  if [[ ! -L "$HOME/.$file" ]]
+  then
+    ln -s "${0:h}/${file:t}" $HOME/.$file
+  fi
+done
+
