@@ -1,0 +1,20 @@
+set guifont=Source\ Code\ Pro:h18
+set go=egm
+set showtabline=2
+color molokai
+
+" CtrlP OS-X Menu remapping
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<D-S-t>
+endif
+
+let g:buffergator_viewport_split_policy="T"
+let g:buffergator_split_size=10
+
+if has("gui_running")
+  if has("autocmd")
+    " Automatically resize splits when resizing MacVim window
+    autocmd VimResized * wincmd =
+  endif
+endif
+
