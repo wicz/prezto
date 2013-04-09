@@ -16,6 +16,7 @@ setopt CORRECT
 #
 # Aliases
 #
+source "${0:h}/alias.zsh"
 
 # Disable correction.
 alias ack='nocorrect ack'

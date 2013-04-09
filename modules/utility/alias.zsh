@@ -1,0 +1,2 @@
+alias eb="nocorrect eb"
+
