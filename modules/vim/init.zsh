@@ -8,3 +8,6 @@ do
   fi
 done
 
+alias vi="mvim -v"
+alias vim="mvim -v"
+

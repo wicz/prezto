@@ -52,7 +52,7 @@ set fdm=syntax
 set nofoldenable
 set showtabline=2
 
-set wildignore+=*/log/*,*/vendor/*,*/_site/*
+set wildignore+=*/log/*,*/vendor/*,*/_site/*,*/cache/*
 
 "let g:ctrlp_working_path_mode = 0
 let vimclojure#SetupKeyMap = 0
