@@ -42,6 +42,7 @@ zstyle ':prezto:load' pmodule \
   'vim' \
   'node' \
   'postgresql' \
+  'mongodb' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
