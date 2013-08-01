@@ -55,6 +55,7 @@ set showtabline=2
 
 set wildignore+=*/log/*,*/vendor/*,*/_site/*,*/cache/*
 
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 "let g:ctrlp_working_path_mode = 0
 let vimclojure#SetupKeyMap = 0
 let g:ycm_key_list_select_completion = ['<Down>']
