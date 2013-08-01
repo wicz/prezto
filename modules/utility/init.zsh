@@ -33,6 +33,7 @@ alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias mysql='nocorrect mysql'
 alias rm='nocorrect rm'
+alias ag='nocorrect ag'
 
 # Disable globbing.
 alias fc='noglob fc'
