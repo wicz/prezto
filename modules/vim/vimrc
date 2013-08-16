@@ -15,7 +15,6 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
-"Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'skammer/vim-css-color'
 Bundle 'tpope/vim-endwise'
@@ -24,15 +23,20 @@ Bundle 'tpope/vim-repeat'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
-"Bundle 'MarcWeber/UltiSnips'
-Bundle 'honza/snipmate-snippets'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Raimondi/delimitMate'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Langs
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-markdown'
+Bundle 'helino/vim-json'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'othree/vim-javascript-syntax'
+
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -53,11 +57,13 @@ set fdm=syntax
 set nofoldenable
 set showtabline=2
 
-set wildignore+=*/log/*,*/vendor/*,*/_site/*,*/cache/*
-
+" Set Silver Searcher as CtrlP engine
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-"let g:ctrlp_working_path_mode = 0
+
+" Clojure configs
 let vimclojure#SetupKeyMap = 0
+
+" Set YouCompleteMe keys
 let g:ycm_key_list_select_completion = ['<Down>']
 
 color desert
@@ -106,12 +112,14 @@ if has("autocmd")
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
+
+  " Javascript folding
+  au FileType javascript call JavaScriptFold()
 endif
 
-  let g:syntastic_enable_signs=1
-    let g:syntastic_quiet_warnings=0
-      let g:syntastic_auto_loc_list=2
-
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=0
+let g:syntastic_auto_loc_list=2
 
 " mappings
 ""
@@ -344,28 +352,22 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 
 " Ignore bundler and sass cache
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/.bundle/*,*/.sass-cache/*
 
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
+" Ignore log, vendor and cache
+set wildignore+=*/log/*,*/vendor/*,*/_site/*,*/cache/*
+
+
 ""
 "" Backup and swap files
 ""
-
 set backupdir^=~/.vim/_backup//    " where to put backup files.
 set directory^=~/.vim/_temp//      " where to put swap files.
 
-" statusline
-
-if has("statusline") && !&cp
-  set laststatus=2  " always show the status bar
-
-  " Start the status line
-  set statusline=%f\ %m\ %r
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=Col:%v
-  set statusline+=Buf:#%n
-  set statusline+=[%b][0x%B]
-endif
+" powerline
+set laststatus=2 " always show the status bar
+set noshowmode   " Hide the default mode text (e.g. -- INSERT -- below the statusline)"
 
