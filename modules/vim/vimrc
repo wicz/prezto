@@ -28,6 +28,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'vim-scripts/Rename2'
 
 " Langs
 Bundle 'vim-ruby/vim-ruby'
