@@ -1,8 +1,3 @@
-# Return if requirements are not found.
-if (( ! $+commands[pg_ctl] )); then
-  return 1
-fi
-
 # Load dependencies.
 pmodload 'helper'
 
