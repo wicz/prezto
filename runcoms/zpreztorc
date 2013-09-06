@@ -43,6 +43,7 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'postgresql' \
   'mongodb' \
+  'mysql' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
