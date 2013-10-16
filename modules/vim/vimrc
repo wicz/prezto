@@ -130,7 +130,7 @@ let g:syntastic_auto_loc_list=2
 map <D-t> :CtrlP<CR>
 imap <D-t> :CtrlP<CR>
 
-map <D-F> :Ack<space>
+map <D-F> :Ag<space>
 
 map <D-/> <plug>NERDCommenterToggle<CR>
 imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
