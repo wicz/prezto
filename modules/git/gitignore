@@ -30,7 +30,7 @@ capybara-*.html
 .rspec
 .rvmrc
 /.bundle
-/vendor/bundle
+vendor/*
 /log/*
 /tmp/*
 /db/*.sqlite3
