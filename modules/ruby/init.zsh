@@ -14,6 +14,11 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   # Source RVM.
   source "$HOME/.rvm/scripts/rvm"
 
+# Load chruby and auto-switching (from homebrew)
+elif [[ -n ${CHRUBY_PREFIX:=$(brew --prefix chruby)} ]]; then
+  source $CHRUBY_PREFIX/share/chruby/chruby.sh
+  source $CHRUBY_PREFIX/share/chruby/auto.sh
+
 # Load manually installed rbenv into the shell session.
 elif [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
   path=("$HOME/.rbenv/bin" $path)
