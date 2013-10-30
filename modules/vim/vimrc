@@ -23,6 +23,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
@@ -37,7 +38,6 @@ Bundle 'helino/vim-json'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'othree/vim-javascript-syntax'
-
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -68,6 +68,10 @@ let vimclojure#SetupKeyMap = 0
 let g:ycm_key_list_select_completion = ['<Down>']
 
 color desert
+
+" Disable annoying beep!
+set vb
+set t_vb=
 
 " autocmd
 if has("autocmd")
