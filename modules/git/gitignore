@@ -30,8 +30,8 @@ capybara-*.html
 .rspec
 .rvmrc
 /.bundle
-vendor
-/log/*
+vendor/bundle
+*.log
 /tmp/*
 /db/*.sqlite3
 /public/system/*
@@ -45,4 +45,6 @@ pickle-email-*.html
 .ruby-version
 **/bin/rspec
 **/bin/autospec
+.vagrant
+.powrc
 
