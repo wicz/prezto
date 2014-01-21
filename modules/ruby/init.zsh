@@ -15,7 +15,7 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm"
 
 # Load chruby and auto-switching (from homebrew)
-elif [[ -n ${CHRUBY_PREFIX:=$(brew --prefix chruby)} ]]; then
+elif [[ -n ${CHRUBY_PREFIX:=/usr/local/opt/chruby} ]]; then
   source $CHRUBY_PREFIX/share/chruby/chruby.sh
   source $CHRUBY_PREFIX/share/chruby/auto.sh
 
