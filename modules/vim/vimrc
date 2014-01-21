@@ -38,7 +38,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'helino/vim-json'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
-Bundle 'othree/vim-javascript-syntax'
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -118,9 +117,6 @@ if has("autocmd")
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
-
-  " Javascript folding
-  au FileType javascript call JavaScriptFold()
 endif
 
 let g:syntastic_enable_signs=1
