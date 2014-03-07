@@ -32,6 +32,7 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'vim-scripts/Rename2'
 Bundle 'stephpy/vim-yaml'
 Bundle 'slim-template/vim-slim'
+Bundle 'tpope/vim-fugitive'
 
 " Langs
 Bundle 'vim-ruby/vim-ruby'
@@ -128,6 +129,11 @@ let g:syntastic_auto_loc_list=2
 ""
 "" General Mappings (Normal, Visual, Operator-pending)
 ""
+
+nmap <leader>gst  :Gstatus<CR>
+nmap <leader>ga   :Gwrite<CR>
+nmap <leader>gco  :Gread<CR>
+nmap <leader>gd   :Gdiff<CR>
 
 map <D-t> :CtrlP<CR>
 imap <D-t> :CtrlP<CR>
