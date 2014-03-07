@@ -40,6 +40,7 @@ alias gbm='git branch -m'
 alias gbM='git branch -M'
 alias gbs='git show-branch'
 alias gbS='git show-branch -a'
+alias gbxR='git push origin'
 
 # Commit (c)
 alias gc='git commit --verbose'

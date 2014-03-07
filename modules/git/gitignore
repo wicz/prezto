@@ -43,8 +43,6 @@ pickle-email-*.html
 .project
 .rbenv*
 .ruby-version
-**/bin/rspec
-**/bin/autospec
 .vagrant
 .powrc
-
+secrets
