@@ -36,6 +36,7 @@ alias rm='nocorrect rm'
 alias ag='nocorrect ag'
 
 # Disable globbing.
+alias bower='noglob bower'
 alias fc='noglob fc'
 alias find='noglob find'
 alias ftp='noglob ftp'
@@ -106,6 +107,10 @@ alias sl='ls'            # I often screw this up.
 # Mac OS X Everywhere
 if [[ "$OSTYPE" == darwin* ]]; then
   alias o='open'
+elif [[ "$OSTYPE" == cygwin* ]]; then
+  alias o='cygstart'
+  alias pbcopy='tee > /dev/clipboard'
+  alias pbpaste='cat /dev/clipboard'
 else
   alias o='xdg-open'
 

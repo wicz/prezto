@@ -103,6 +103,13 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'sorin'
 
 #
+# Ruby
+#
+
+# Auto switch the Ruby version on directory change.
+zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+
+#
 # Screen
 #
 
@@ -154,4 +161,3 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
-
