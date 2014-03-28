@@ -32,6 +32,7 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'prompt' \
   'direnv' \
   'git' \
   'archive' \
@@ -46,8 +47,7 @@ zstyle ':prezto:load' pmodule \
   'mongodb' \
   'mysql' \
   'syntax-highlighting' \
-  'history-substring-search' \
-  'prompt'
+  'history-substring-search'
 
 #
 # Editor
