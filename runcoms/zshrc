@@ -12,3 +12,6 @@ fi
 
 # Customize to your needs...
 
+# direnv
+eval "$(direnv hook $SHELL)"
+
