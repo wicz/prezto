@@ -1,52 +1,55 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " original repos on github
-Bundle 'vim-scripts/Colour-Sampler-Pack'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'rking/ag.vim'
-Bundle 'ap/vim-css-color'
-Bundle 'tpope/vim-endwise'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-repeat'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'vim-scripts/Rename2'
-Bundle 'stephpy/vim-yaml'
-Bundle 'slim-template/vim-slim'
-Bundle 'tpope/vim-fugitive'
+Plugin 'vim-scripts/Colour-Sampler-Pack'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'rking/ag.vim'
+Plugin 'ap/vim-css-color'
+Plugin 'tpope/vim-endwise'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-repeat'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-scripts/Rename2'
+Plugin 'stephpy/vim-yaml'
+Plugin 'slim-template/vim-slim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'godlygeek/tabular'
 
 " Langs
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-markdown'
-Bundle 'helino/vim-json'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-markdown'
+Plugin 'helino/vim-json'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
 
 " vim-scripts repos
-" Bundle 'L9'
+" Plugin 'L9'
 
 " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 
+call vundle#end()
 filetype plugin indent on     " required!
 
 autocmd BufWritePre * :%s/\s\+$//e
@@ -67,7 +70,24 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let vimclojure#SetupKeyMap = 0
 
 " Set YouCompleteMe keys
-let g:ycm_key_list_select_completion = ['<Down>']
+"let g:ycm_key_list_select_completion = ['<Down>']
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.python = ''
+let g:neocomplete#sources#omni#input_patterns.ruby = ''
+if !exists('g:neocomplete#sources')
+  let g:neocomplete#sources = {}
+endif
+let g:neocomplete#sources.ruby = ['buffer']
 
 color desert
 
