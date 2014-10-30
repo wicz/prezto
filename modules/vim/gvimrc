@@ -1,5 +1,4 @@
-" set guifont=Source\ Code\ Pro:h18
-set guifont=PragmataPro\ for\ Powerline:h18
+set guifont=Hermit:h16
 set go=egm
 set showtabline=2
 color molokai
