@@ -30,7 +30,8 @@ capybara-*.html
 .rspec
 .rvmrc
 /.bundle
-vendor/bundle
+*vendor/bundle/*
+*vendor/assets/components/*
 *.log
 /tmp/*
 /db/*.sqlite3
@@ -46,3 +47,4 @@ pickle-email-*.html
 .vagrant
 .powrc
 secrets
+.envrc

@@ -2,6 +2,7 @@ set guifont=Hermit:h16
 set go=egm
 set showtabline=2
 color molokai
+set cursorline
 
 " CtrlP OS-X Menu remapping
 if has("gui_macvim")
